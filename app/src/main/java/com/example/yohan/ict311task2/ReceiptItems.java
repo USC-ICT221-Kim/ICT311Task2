@@ -22,21 +22,21 @@ public class ReceiptItems {
     private ReceiptItems(Context context) {
         mReceipt = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            Receipt crime = new Receipt();
-            crime.setTitle("Receipt #" + i);
-            crime.setSolved(i % 2 == 0);
-            mReceipt.add(crime);
+            Receipt receipt = new Receipt();
+            receipt.setTitle("Receipt #" + i);
+            receipt.setSolved(i % 2 == 0);
+            mReceipt.add(receipt);
         }
     }
 
-    public List<Receipt> getCrimes() {
+    public List<Receipt> getReceipts() {
         return mReceipt;
     }
 
-    public Receipt getCrime(UUID id) {
-        for (Receipt crime : mReceipt) {
-            if (crime.getId().equals(id)) {
-                return crime;
+    public Receipt getReceipt(UUID id) {
+        for (Receipt receipts : mReceipt) {
+            if (receipts.getId().equals(id)) {
+                return receipts;
             }
         }
         return null;
